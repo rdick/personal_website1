@@ -66,3 +66,32 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Front-end developer portfolio site">
+    <meta property="og:title" content='Front-End Developer' />
+    <meta property="og:description" content='Personal portfolio' />
+    <meta property="og:image" content='https://www.gabywritescode.com/thumbnail.png'/>
+    <meta property="og:url" content='https://www.gabywritescode.com' />
+    <meta property="og:type" content='website' />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@gabywritescode" />
+    <meta name="twitter:title" content="Portfolio Site" />
+    <meta name="twitter:image" content="https://www.gabywritescode.com/square.png" />
+    <meta name="twitter:image:alt" content="Portfolio site" />
+    {/* <!-- <meta name="twitter:description" content="Portfolio site" /> --> */}
+
+    <title>Gabriela Parada</title>
+
+    {/* <!-- AOS --> */}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    {/* <!-- Favicon --> */}
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon.ico">
+    {/* <!-- Fonts --> */}
+    <link href="https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Raleway:wght@300;400&family=Squada+One&display=swap" rel="stylesheet">
+    {/* <!-- Styles --> */}
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
