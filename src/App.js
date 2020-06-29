@@ -2,10 +2,11 @@ import React from 'react';
 import './App.css';
 import Colors from './constants/colors'
 import { Parallax, Background } from "react-parallax";
+import useWindowDimensions from './hooks/window'
 
 function App() {
-  const windowSize = window.innerWidth
-  console.log(windowSize, typeof windowSize)
+  const { height, width } = useWindowDimensions();
+  console.log(width)
   return (
     <div>
       <section className="page1">
@@ -77,7 +78,7 @@ function App() {
               }} ><img src="/RyanName.png" alt="" style={{
                 marginTop: "20%",
                 transform: `translateX(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 9000)}px)`,
-                opacity: `${windowSize > 431 ? "1" : percentage < 0.601
+                opacity: `${width > 431 ? "1" : percentage < 0.601
                   ? 0.9
                   : percentage < 0.603
                     ? 0.8
@@ -107,18 +108,16 @@ function App() {
                 style={{
                   position: 'absolute',
                   // background: `rgba(255, 125, 0, ${(percentage - 0.57) * 10})`,
-                  left: `${windowSize > 1150 ? "25%" : "10%"}`,
+                  left: `${width > 1150 ? "25%" : "10%"}`,
                   top: '35%',
                   margin: "0 auto",
-                  width: `${windowSize > 1150 ? "55%" : "80%"}`,
+                  width: `${width > 1150 ? "55%" : "80%"}`,
                   height: percentage * 500,
                   color: `black`, fontFamily: "Optima",
                   lineHeight: "1.5em"
                 }}
               >
-                {((percentage - 0.49) * 700)}
-                <p></p>
-                {((percentage - 0.49) * 1200)}
+
                 <h1>About Me</h1>
                 <p style={{ fontSize: 20 }}>While going to school for Civil Engineering, I was introduced to programming and found it fascinating.
                 I saw programming as an art, each line of code was a brush stroke on a masterpiece. Today,
@@ -158,7 +157,7 @@ function App() {
                   <p><strong>Volleyball</strong> - especially beach volleyball<br /></p>
                   <p><strong>Travelling</strong> - recently to Amsterdam and Morocco <br /></p>
                 </div>
-                {windowSize < 431
+                {width < 431
                   ?
                   ""
                   :
@@ -194,9 +193,6 @@ function App() {
                     }}>
                       <img src='/ryan.png' style={{ borderRadius: "10%", width: `90%` }} />
                     </div>
-                    {((percentage - 0.49) * 700)}
-                    <p></p>
-                    {((percentage - 0.49) * 1200)}
                   </>
                 }
 
@@ -214,21 +210,43 @@ function App() {
 
 
 
-      <section className="about-section"  >
-        <h2 className="project-title">Local Footprint</h2>
-        <div className="about" >
+      <section className="project-section"  >
+
+        <div className="project-container" >
           <div className="picture-container">
-            <img className="picture" src="/01_Projects//01_LocalFp/1_R.png" alt="Local Footprint" />
+            <img className="project-picture" src="/01_Projects//01_LocalFp/1_R.png" alt="Local Footprint" />
           </div>
-          <div className="about-container">
-            <p>details of projects daljdsf kja;dflkja; ldjf;la kjdfkj;l skdfjakjdf lkjad;fj;jfakj ;kljasdkfa;klf</p>
-            <span className="project-tools">JavaScript | React | Firebase | HTML | CSS</span>
-            <div>
-              <button>GitHub</button>
-              <button>GitHub</button>
+          <div className="details-container">
+            <h2 className="project-title">Local Footprint</h2>
+            <p>•	Track employees with real-time location tracking <br />
+            •	See past location data of all employees<br />
+            •	Workers can send reports from their phone to their manager<br />
+            </p>
+            <span className="project-tools">React | React-Native | Firebase | MapBox |  Deck.gl</span>
+            <div className="button-container">
+              <a href="https://www.google.com/"><div className="button github">GitHub</div></a>
+              <a href="https://www.facebook.com/"><div className="button github">Live</div></a>
             </div>
           </div>
         </div>
+
+        <br /><br /><br /><br />
+
+        <div className="project-container" >
+          <div className="picture-container">
+            <img className="project-picture pic2" src={`/01_Projects/02_ShopRN/${width < 1250 ? "01_main.png" : "02_3screens.png"}`} alt="Local Footprint" />
+          </div>
+          <div className="details-container">
+            <h2 className="project-title">Shoppy</h2>
+            <p>A mobile shopping app where you can upload your products and sell them on the application</p>
+            <span className="project-tools">React-Native | Firebase | Redux | </span>
+            <div className="button-container">
+              <a href="https://www.google.com/"><div className="button github">GitHub</div></a>
+              <a href="https://www.facebook.com/"><div className="button github">Live</div></a>
+            </div>
+          </div>
+        </div>
+
       </section>
 
     </div >

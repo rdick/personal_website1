@@ -20,22 +20,26 @@ h2{
   margin-top: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Intro Section */
 .page1 {
   height: 300vh;
   width: 100vw;
 }
 
-/* About Me Section */
-.about-section {
+/* Project Section */
+.project-section {
   min-height: 50vh;
   width: 100vw;
-  background-color: blue;
   margin-bottom: 100px;
 }
 
-.about-title {
-  text-align: center;
+.project-container {
+  margin: 0 5%;
+  display: flex;
 }
 
 .picture-container {
@@ -43,51 +47,118 @@ h2{
   justify-content: center;
 }
 
-.picture {
-  width: 75%;
+.project-picture {
+  width: 90%;
   border-radius: 1%;
 }
 
-/* Projects Section */
+.details-container {
+  margin: 0 5%;
+}
+.project-title {
+  margin-top: 5%;
+}
 
 .project-details {
   width: 45%;
 }
 
 .projects-title {
+  justify-content: left;
 }
 
 .project-tools {
   font-family: 'Squada One', cursive;
   font-size: 1.3rem;
+  letter-spacing: 0.05em;
 }
 
 
+/* Buttons */
+.button-container {
+  display: flex;
+  height: 40%;
+  align-items: center;
+}
+
+.github {
+  background-color: rgb(109, 199, 109);
+  letter-spacing: 0.15em;
+  width: 100px;
+  padding: 15px 12px; 
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+  margin: 0px 15px 0 15px;
+  transition: padding 0.5s,font-size 0.5s, font-weight 0.5s, border-radius 0.5s ;
+  -webkit-transition: padding 0.5s,font-size 0.5s, font-weight 0.5s, border-radius 0.5s;
+}
+
+.github:hover {
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 /* Media Queries */
-/* @media (max-width: 960px){
-  .project {
+
+
+
+
+/* @media (min-width: 960px){
+  .project-container {
     height: 50vh;
     width: 100vw;
-    background-color: green;
+    display: flex;
+    flex-direction: row ;
+  }
+  .details-container {
     display: flex;
     flex-direction: column;
   }
 
-  .project-picture, .project-details {
-    float: none;
+  .project-picture {
+    width: 80%;
+  }
+}
+
+@media (max-width: 960px){
+  .project-container {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-picture {
     width: 100%;
   }
 } */
 
-@media (max-width: 540px){
+@media (max-width: 1050px){
+  .project-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-picture {
+    max-width: 90%;
+    max-height: 70vh;
+    width: auto;
+  }
+  .details-container {
+    text-align: center;
+  }
+  .button-container {
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+}
+
+/* @media (max-width: 540px){
   html {
     font-size: 10px;
   }
-  .about {
-    flex-direction: column;
-  }
-}
+} */
 
-@media (max-width: 720px){
-
-}
