@@ -24,13 +24,13 @@ function App() {
                 top: '0%',
                 width: 0,
                 height: 0,
-                borderTop: `${2000 / (percentage * 80)}vh solid red`,
+                borderTop: `${2000 / (percentage * 80)}vh solid #ff2928`,
                 borderLeft: `${2000 / (percentage * 80)}vw solid transparent`,
               }} />
               <img src="/HelloMyNameIs.png" alt="" style={{
                 position: 'absolute',
-                right: `25%`,
-                top: '15%',
+                right: `40%`,
+                top: '27%',
                 width: `${50 + (percentage - 0.49) * 1000}vw`,
                 transform: `translate(0,${(percentage) * 10000})px`,
                 opacity: `
@@ -61,15 +61,15 @@ function App() {
               {/* Circle */}
               <div style={{
                 position: 'absolute',
-                right: `10%`,
-                top: '18.5%',
+                right: `17%`,
+                top: '32.5%',
                 width: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
                 height: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
                 transform: `translateX(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px)`,
+                background: "#ff2928",
 
 
-
-                background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
+                // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
 
 
 
@@ -78,7 +78,7 @@ function App() {
               }} ><img src="/RyanName.png" alt="" style={{
                 marginTop: "20%",
                 transform: `translateX(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 9000)}px)`,
-                opacity: `${width > 431 ? "1" : percentage < 0.601
+                opacity: `${percentage < 0.6
                   ? 0.9
                   : percentage < 0.603
                     ? 0.8
@@ -103,110 +103,71 @@ function App() {
                                       : 0}`
               }} /></div>
 
-              {/* About Me - Square */}
-              <div
-                style={{
-                  position: 'absolute',
-                  // background: `rgba(255, 125, 0, ${(percentage - 0.57) * 10})`,
-                  left: `${width > 1150 ? "25%" : "10%"}`,
-                  top: '35%',
-                  margin: "0 auto",
-                  width: `${width > 1150 ? "55%" : "80%"}`,
-                  height: percentage * 500,
-                  color: `black`, fontFamily: "Optima",
-                  lineHeight: "1.5em"
-                }}
-              >
-
-                <h1>About Me</h1>
-                <p style={{ fontSize: 20 }}>While going to school for Civil Engineering, I was introduced to programming and found it fascinating.
-                I saw programming as an art, each line of code was a brush stroke on a masterpiece. Today,
-                As a junior developer I hope to use my previous experience, managing multi-million dollar projects, with my craft,
-                web development, to make your project come to life!
-                  </p>
-                <br />
-                <div style={{ borderBottom: "solid black 2px" }} />
-                <br />
-                <br />
-                <h1>Education</h1>
-                <div style={{ fontSize: 20 }}>
-                  <p><strong>University of Alberta - Civil Engineering</strong> - Started two non-profits <br /></p>
-                  <p><strong>Code Core College - Web Dev Bootcamp</strong>- Built data visualization tools<br /></p>
-                </div>
-                <br />
-                <div style={{ borderBottom: "solid black 2px" }} />
-                <br />
-                <br />
-                <h1>Work Experience</h1>
-                <div style={{ fontSize: 20 }}>
-                  <p><strong>Summary</strong><br /></p>
-                  <p>Managed the construction of Oilers Hockey Arena ($630 million), Oil and Gas Plants in Fort McMurray,
-                  and Water Treatment Plants Across Alberta. Worked in construction projectmanagment for 4 years.
-                     <br />
-                    <br />
-                     Skills gained include contract managment, scheduling multiple subcontractors,
-                     quality control, cost control and forecasting.
-                  </p>
-                </div>
-                <br />
-                <div style={{ borderBottom: "solid black 2px" }} />
-                <br />
-                <br />
-                <h1>Hobbies</h1>
-                <div style={{ fontSize: 20 }}>
-                  <p><strong>Volleyball</strong> - especially beach volleyball<br /></p>
-                  <p><strong>Travelling</strong> - recently to Amsterdam and Morocco <br /></p>
-                </div>
-                {width < 431
-                  ?
-                  ""
-                  :
-                  <>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <div style={{
-                      width: `100%`,
-                      opacity: `${percentage < 0.73
-                        ? 0.0
-                        : percentage < 0.735
-                          ? 0.1
-                          : percentage < 0.74
-                            ? 0.2
-                            : percentage < 0.745
-                              ? 0.3
-                              : percentage < 0.75
-                                ? 0.4
-                                : percentage < 0.752
-                                  ? 0.5
-                                  : percentage < 0.754
-                                    ? 0.6
-                                    : percentage < 0.756
-                                      ? 0.7
-                                      : percentage < 0.759
-                                        ? 0.8
-                                        : percentage < 0.76
-                                          ? 0.9
-                                          : 1
-                        }`
-                    }}>
-                      <img src='/ryan.png' style={{ borderRadius: "10%", width: `90%` }} />
-                    </div>
-                  </>
-                }
-
-                <br />
+              <div style={{
+                position: 'absolute',
+                whiteSpace: 'nowrap',
+                right: `39%`,
+                top: '55%',
+                transform:
+                  `translateY(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px) 
+                translateX(${percentage < 0.6 ? (percentage) : ((percentage - 0.6) * 23500)}px)
+                `,
+                fontSize: `${width < 431 ? 40 :
+                  percentage < 0.6 ? 50 : 56.5 + (percentage - 0.6) * 11000}px`,
+                // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
+                borderRadius: "100%"
+              }} >Web Devel<span style={{ background: "white", borderRadius: '100%' }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>per
               </div>
+              {console.log(percentage)}
+              <div style={{
+                position: 'absolute',
+                left: `50%`,
+                top: '56.3%',
+                width: `${percentage < 0.6 ? "30" : ((percentage - 0.6) * 1000) + 30}px`,
+                height: `${percentage < 0.6 ? "30" : ((percentage - 0.6) * 1000) + 30}px`,
+                background: "white",
+                transform: `translateY(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px)`,
+
+
+                // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
+
+
+
+
+                borderRadius: "100%"
+              }} />
+
+              {/* <div style={{
+                position: 'absolute',
+                whiteSpace: 'nowrap',
+                left: `65.5%`,
+                top: '55%',
+                transform: `translateY(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px)`,
+                fontSize: `${width < 431 ? 40 :
+                  percentage < 0.601 ? 40 + (percentage - 0.49) * 150 : 56.65 + (percentage - 0.601) * 6000}px`,
+                // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
+                borderRadius: "100%"
+              }} >per
+              </div> */}
             </>
           )}
         >
-          <div style={{ height: '300vh' }} />
+          <div style={{ height: '140vh' }} />
 
         </Parallax>
+        <div style={{ height: '100vh', background: '#ff2928', border: 'black solid 1px', margin: '5%' }}>
+          <div style={{ padding: '5%' }}>
+            <h1 className='about-title'>About</h1>
+            <p style={{ fontSize: 20 }}>While going to school for Civil Engineering, I was introduced to programming and found it fascinating.
+            I saw programming as an art, each line of code was a brush stroke on a masterpiece. Today,
+            As a junior developer I hope to use my previous experience, managing multi-million dollar projects, with my craft,
+            web development, to make your project come to life!
+                  </p>
+          </div>
+        </div>
       </section>
 
-      <h1>Projects</h1>
+      <h1 className="about-title" style={{ fontFamily: 'Birds of Paradise' }}>Projects</h1>
 
 
 
@@ -254,4 +215,6 @@ function App() {
 }
 
 export default App;
+
+
 

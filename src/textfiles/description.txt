@@ -1,0 +1,95 @@
+{/* About Me - Square */}
+              <div
+                style={{
+                  position: 'absolute',
+                  // background: `rgba(255, 125, 0, ${(percentage - 0.57) * 10})`,
+                  left: `${width > 1150 ? "25%" : "10%"}`,
+                  top: '35%',
+                  margin: "0 auto",
+                  width: `${width > 1150 ? "55%" : "80%"}`,
+                  height: percentage * 500,
+                  color: `black`, fontFamily: "Optima",
+                  lineHeight: "1.5em"
+                }}
+              >
+
+                <h1>About Me</h1>
+                <p style={{ fontSize: 20 }}>While going to school for Civil Engineering, I was introduced to programming and found it fascinating.
+                I saw programming as an art, each line of code was a brush stroke on a masterpiece. Today,
+                As a junior developer I hope to use my previous experience, managing multi-million dollar projects, with my craft,
+                web development, to make your project come to life!
+                  </p>
+                <br />
+                <div style={{ borderBottom: "solid black 2px" }} />
+                <br />
+                <br />
+                <h1>Education</h1>
+                <div style={{ fontSize: 20 }}>
+                  <p><strong>University of Alberta - Civil Engineering</strong> - Started two non-profits <br /></p>
+                  <p><strong>Code Core College - Web Dev Bootcamp</strong>- Built data visualization tools<br /></p>
+                </div>
+                <br />
+                <div style={{ borderBottom: "solid black 2px" }} />
+                <br />
+                <br />
+                <h1>Work Experience</h1>
+                <div style={{ fontSize: 20 }}>
+                  <p><strong>Summary</strong><br /></p>
+                  <p>Managed the construction of Oilers Hockey Arena ($630 million), Oil and Gas Plants in Fort McMurray,
+                  and Water Treatment Plants Across Alberta. Worked in construction projectmanagment for 4 years.
+                     <br />
+                    <br />
+                     Skills gained include contract managment, scheduling multiple subcontractors,
+                     quality control, cost control and forecasting.
+                  </p>
+                </div>
+                <br />
+                <div style={{ borderBottom: "solid black 2px" }} />
+                <br />
+                <br />
+                <h1>Hobbies</h1>
+                <div style={{ fontSize: 20 }}>
+                  <p><strong>Volleyball</strong> - especially beach volleyball<br /></p>
+                  <p><strong>Travelling</strong> - recently to Amsterdam and Morocco <br /></p>
+                </div>
+                {width < 431
+                  ?
+                  ""
+                  :
+                  <>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div style={{
+                      width: `100%`,
+                      opacity: `${percentage < 0.73
+                        ? 0.0
+                        : percentage < 0.735
+                          ? 0.1
+                          : percentage < 0.74
+                            ? 0.2
+                            : percentage < 0.745
+                              ? 0.3
+                              : percentage < 0.75
+                                ? 0.4
+                                : percentage < 0.752
+                                  ? 0.5
+                                  : percentage < 0.754
+                                    ? 0.6
+                                    : percentage < 0.756
+                                      ? 0.7
+                                      : percentage < 0.759
+                                        ? 0.8
+                                        : percentage < 0.76
+                                          ? 0.9
+                                          : 1
+                        }`
+                    }}>
+                      <img src='/ryan.png' style={{ borderRadius: "10%", width: `90%` }} />
+                    </div>
+                  </>
+                }
+
+                <br />
+              </div>
