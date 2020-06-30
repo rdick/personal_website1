@@ -218,7 +218,7 @@ function App() {
           </div>
           <div className="details-container">
             <h2 className="project-title">Local Footprint</h2>
-            <p>•	Track employees with real-time location tracking <br />
+            <p>•	Monitor employees with real-time location tracking <br />
             •	See past location data of all employees<br />
             •	Workers can send reports from their phone to their manager<br />
             </p>
