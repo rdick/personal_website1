@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Colors from './constants/colors'
-import { Parallax, Background } from "react-parallax";
+import { Parallax } from "react-parallax";
 import useWindowDimensions from './hooks/window'
+import { CSSTransition } from 'react-transition-group'
 
 function App() {
   const { height, width } = useWindowDimensions();
+  const [about, setAbout] = useState(false)
+  const [projects, setProjects] = useState(false)
+  const [contact, setContact] = useState(false)
+
   console.log(width)
   return (
     <div>
@@ -107,55 +111,42 @@ function App() {
                 position: 'absolute',
                 whiteSpace: 'nowrap',
                 right: `39%`,
-                top: '55%',
+                top: '50%',
                 transform:
                   `translateY(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px) 
-                translateX(${percentage < 0.6 ? (percentage) : ((percentage - 0.6) * 23500)}px)
+                translateX(${percentage < 0.7 ? (percentage) : ((percentage - 0.7) * 51000)}px)
                 `,
                 fontSize: `${width < 431 ? 40 :
-                  percentage < 0.6 ? 50 : 56.5 + (percentage - 0.6) * 11000}px`,
+                  percentage < 0.7 ? 50 : 56.5 + (percentage - 0.7) * 24000}px`,
                 // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
                 borderRadius: "100%"
-              }} >Web Devel<span style={{ background: "white", borderRadius: '100%' }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>per
+              }} >Web Devel<span style={{ background: "black", borderRadius: '100%', height: '0.6em', width: '0.6em', display: 'inline-block' }}></span>per
               </div>
-              {console.log(percentage)}
-              <div style={{
-                position: 'absolute',
-                left: `50%`,
-                top: '56.3%',
-                width: `${percentage < 0.6 ? "30" : ((percentage - 0.6) * 1000) + 30}px`,
-                height: `${percentage < 0.6 ? "30" : ((percentage - 0.6) * 1000) + 30}px`,
-                background: "white",
-                transform: `translateY(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px)`,
 
-
-                // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
-
-
-
-
-                borderRadius: "100%"
-              }} />
-
-              {/* <div style={{
-                position: 'absolute',
-                whiteSpace: 'nowrap',
-                left: `65.5%`,
-                top: '55%',
-                transform: `translateY(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px)`,
-                fontSize: `${width < 431 ? 40 :
-                  percentage < 0.601 ? 40 + (percentage - 0.49) * 150 : 56.65 + (percentage - 0.601) * 6000}px`,
-                // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
-                borderRadius: "100%"
-              }} >per
-              </div> */}
             </>
           )}
         >
-          <div style={{ height: '140vh' }} />
+          <div style={{ height: '210vh' }} />
 
         </Parallax>
-        <div style={{ height: '100vh', background: '#ff2928', border: 'black solid 1px', margin: '5%' }}>
+
+
+        <div style={{ height: '85vh', width: '100%', background: 'black', position: 'absolute' }} >
+
+
+          <div className="title-headers" onClick={() => setAbout(!about)}> About </div>
+
+          <div className="title-headers" onClick={() => setProjects(!projects)} style={{ top: '30%', }} >
+            Projects
+          </div>
+
+          <div className="title-headers" onClick={() => setContact(!contact)} style={{ top: '60%' }}>
+            Contact
+          </div>
+
+        </div>
+
+        {/* <div style={{ height: '100vh', background: '#ff2928', border: 'green solid 100px', margin: '5%' }}>
           <div style={{ padding: '5%' }}>
             <h1 className='about-title'>About</h1>
             <p style={{ fontSize: 20 }}>While going to school for Civil Engineering, I was introduced to programming and found it fascinating.
@@ -195,7 +186,7 @@ function App() {
 
         <div className="project-container" >
           <div className="picture-container">
-            <img className="project-picture pic2" src={`/01_Projects/02_ShopRN/${width < 1250 ? "01_main.png" : "02_3screens.png"}`} alt="Local Footprint" />
+            <img className="project-picture pic2" src={`/ 01_Projects/ 02_ShopRN /${width < 1250 ? "01_main.png" : "02_3screens.png"}`} alt="Local Footprint" />
           </div>
           <div className="details-container">
             <h2 className="project-title">Shoppy</h2>
@@ -206,7 +197,7 @@ function App() {
               <a href="https://www.facebook.com/"><div className="button github">Live</div></a>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </section>
 
@@ -218,3 +209,37 @@ export default App;
 
 
 
+{/* <Parallax
+          bgStyle={{ background: 'black' }}
+          bgImage={'https://www.blackdiamondequipment.com/on/demandware.static/-/Library-Sites-SharedLibrary/default/dwaa32a4c9/images/stories/S20_WeAreListening_HP-Content.jpg'}
+          bgImageAlt="the cat"
+          strength={400}
+          renderLayer={percentage => (
+            <>
+              {console.log(percentage)}
+              <div className="title-headers" style={{
+                opacity: `${(percentage - 0.05) * 15}`
+              }} > About </div>
+
+              <div className="title-headers" style={{
+                top: '30%',
+                opacity: `${(percentage - 0.2) * 15}`
+              }} > Projects </div>
+
+              <CSSTransition in={about} timeout={200} classNames="my-node">
+              <div className="title-headers"
+                style={{
+                  top: '60%',
+                  opacity: `${(percentage - 0.34) * 15}`
+                }}
+                onClick={() => setAbout(true)}
+              > Contact<button onClick={() => setAbout(!about)}>hello</button></div>
+
+              </CSSTransition>
+              {console.log(about)}
+
+            </>
+          )}
+        >
+          <div style={{ height: '85vh' }} />
+        </Parallax> */}

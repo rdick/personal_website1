@@ -32,6 +32,17 @@ a {
   width: 100vw;
 }
 
+/* Headers Section */
+
+.title-headers {
+  position: absolute;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: 'Birds of Paradise';
+  font-size: 200px;
+}
+
 /* Project Section */
 .project-section {
   min-height: 50vh;
