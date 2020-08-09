@@ -256,28 +256,39 @@ function App() {
             </div>
           </div>
 
-          <div className='about-section' style={{ background: '#121212', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', paddingRight: '1em', paddingLeft: '1em', paddingTop: '10em' }}>
+          <div className='about-section' style={{ background: '#121212', textAlign: 'center', paddingTop: '10em' }}>
             <div className="title-headers">
               Contact
             </div>
           </div>
-          <form
-            onSubmit={submitForm}
-            action="https://formspree.io/mqkyjakv"
-            method="POST"
-            className='contact-form'
-            style={{ color: 'white' }}
-          >
-            {/* <!-- add your custom form HTML here --> */}
-            <label>Name:</label>
-            <input type="name" name="name" />
-            <label>Email:</label>
-            <input type="email" name="email" />
-            <label>Message:</label>
-            <input type="text" name="message" />
-            {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
-            {status === "ERROR" && <p>Ooops! There was an error.</p>}
-          </form>
+          <div className='form-container'>
+            <form
+              onSubmit={submitForm}
+              action="https://formspree.io/mqkyjakv"
+              method="POST"
+              className='contact-form'
+              style={{ color: 'white' }}
+            >
+              {/* <!-- add your custom form HTML here --> */}
+              <div className='form-name'>
+                {/* <label>Name:</label> */}
+                <input className='input-general input-small' type="name" name="name" placeholder="what's your name?" />
+              </div>
+
+              <div className='form-name'>
+                {/* <label>Email:</label> */}
+                <input className='input-general input-small' type="email" name="email" placeholder='your@email.com' />
+              </div>
+
+              <div className='form-name'>
+                {/* <label>Message:</label> */}
+                <input className='input-general input-large' type="text" name="message" placeholder='My favorite type of pizza is Hawaiian. What is yours?' />
+              </div>
+
+              {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
+              {status === "ERROR" && <p>Ooops! There was an error.</p>}
+            </form>
+          </div>
         </div>
         {/* <div style={{ height: '100vh', background: '#ff2928', border: 'green solid 100px', margin: '5%' }}>
           <div style={{ padding: '5%' }}>

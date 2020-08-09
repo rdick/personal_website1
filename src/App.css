@@ -128,6 +128,49 @@ a {
   font-family: 'Birds of Paradise';
 }
 
+.contact-form {
+  color: gainsboro;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 40vh;
+}
+
+.input-general {
+  background-color: #131313;
+  color: gainsboro;
+  height: 2em;
+  font-size: 1em;
+  text-align: center;
+  padding-top: 1em;
+  margin-top: 2em;
+  
+}
+
+.input-small {
+  border-bottom: gainsboro 1px solid;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  width: 40%;
+  
+}
+
+.input-large {
+  border: gainsboro 1px solid;
+  height: 4em;
+  width: 60%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 /* Media Queries */
 
 
