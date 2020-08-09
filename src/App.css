@@ -30,17 +30,17 @@ a {
 .page1 {
   height: 300vh;
   width: 100vw;
+  background: black;
 }
 
 /* Headers Section */
 
 .title-headers {
-  position: absolute;
   width: 100%;
   color: white;
-  text-align: center;
   font-family: 'Birds of Paradise';
   font-size: 200px;
+  transition: color 0.75s;
 }
 
 /* Project Section */
@@ -51,8 +51,11 @@ a {
 }
 
 .project-container {
-  margin: 0 5%;
+  padding-top: 5em;
+  width: 100%;
   display: flex;
+  background-color: #121212;
+  color: gray
 }
 
 .picture-container {
@@ -70,6 +73,7 @@ a {
 }
 .project-title {
   margin-top: 5%;
+  color: gainsboro;
 }
 
 .project-details {
@@ -80,10 +84,15 @@ a {
   justify-content: left;
 }
 
+.project-info {
+  color: #c1c1c1;
+}
+
 .project-tools {
   font-family: 'Squada One', cursive;
   font-size: 1.3rem;
   letter-spacing: 0.05em;
+  color: #c1c1c1;
 }
 
 
@@ -95,11 +104,12 @@ a {
 }
 
 .github {
-  background-color: rgb(109, 199, 109);
+  background-color: gainsboro;
   letter-spacing: 0.15em;
   width: 100px;
   padding: 15px 12px; 
   border-radius: 10px;
+  border: gray 2px solid;
   color: black;
   text-align: center;
   margin: 0px 15px 0 15px;
@@ -108,9 +118,8 @@ a {
 }
 
 .github:hover {
-  padding: 20px;
-  font-weight: bold;
-  font-size: 20px;
+  background: white;
+  border: yellow 2px solid;
 }
 
 .about-title {
@@ -154,7 +163,7 @@ a {
   }
 } */
 
-@media (max-width: 1050px){
+@media (max-width: 1150px){
   .project-container {
     display: flex;
     flex-direction: column;

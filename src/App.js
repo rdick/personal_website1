@@ -2,15 +2,35 @@ import React, { useState } from 'react';
 import './App.css';
 import { Parallax } from "react-parallax";
 import useWindowDimensions from './hooks/window'
-import { CSSTransition } from 'react-transition-group'
 
 function App() {
   const { height, width } = useWindowDimensions();
   const [about, setAbout] = useState(false)
   const [projects, setProjects] = useState(false)
   const [contact, setContact] = useState(false)
+  const [status, setStatus] = useState("")
 
-  console.log(width)
+
+  const submitForm = ev => {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        setStatus({ status: "SUCCESS" });
+      } else {
+        setStatus({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
+  }
+
+
   return (
     <div>
       <section className="page1">
@@ -113,16 +133,45 @@ function App() {
                 right: `39%`,
                 top: '50%',
                 transform:
-                  `translateY(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px) 
-                translateX(${percentage < 0.7 ? (percentage) : ((percentage - 0.7) * 51000)}px)
+                  `translateY(${percentage < 0.54 ? "0" : percentage < 0.71 ? "78" : ((percentage - 0.54) * 300)}px) 
+                translateX(${percentage < 0.7 ? percentage : percentage < 0.85 ? ((percentage - 0.7) * 79000) : 11850}px)
                 `,
                 fontSize: `${width < 431 ? 40 :
-                  percentage < 0.7 ? 50 : 56.5 + (percentage - 0.7) * 24000}px`,
+                  percentage < 0.7 ? 50 : percentage < 0.85 ? 56.5 + (percentage - 0.70) * 40000 : 6056}px`,
                 // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
                 borderRadius: "100%"
-              }} >Web Devel<span style={{ background: "black", borderRadius: '100%', height: '0.6em', width: '0.6em', display: 'inline-block' }}></span>per
-              </div>
+              }} >Web Devel<span style={{
+                background: `rgb${`${percentage < 0.7
+                  ? "(0,0,0)"
+                  : percentage < 0.705
+                    ? "(2,2,2)"
+                    : percentage < 0.710
+                      ? "(4,4,4)"
+                      : percentage < 0.715
+                        ? "(6,6,6)"
+                        : percentage < 0.720
+                          ? "(8,8,8)"
+                          : percentage < 0.725
+                            ? "(10,10,10)"
+                            : percentage < 0.730
+                              ? "(12,12,12)"
+                              : percentage < 0.735
+                                ? "(14,14,14)"
+                                : percentage < 0.740
+                                  ? "(16,16,16)"
+                                  : percentage < 0.750
+                                    ? "(18,18,18)"
+                                    : percentage < 0.760
+                                      ? "(18,18,18)"
+                                      : "(18,18,18)"}`}`
 
+
+                ,
+                borderRadius: '100%', height: '0.6em', width: '0.6em', display: 'inline-block',
+                fontSize: `${width < 431 ? 40 : percentage < 0.7 ? 50 : percentage < 0.85 ? 56.5 + (percentage - 0.70) * 60000 : 9056}px`,
+              }}></span>per
+              </div>
+              {console.log(percentage)}
             </>
           )}
         >
@@ -131,21 +180,105 @@ function App() {
         </Parallax>
 
 
-        <div style={{ height: '85vh', width: '100%', background: 'black', position: 'absolute' }} >
+        <div style={{ width: '100%', background: '#121212' }} >
 
-
-          <div className="title-headers" onClick={() => setAbout(!about)}> About </div>
-
-          <div className="title-headers" onClick={() => setProjects(!projects)} style={{ top: '30%', }} >
-            Projects
+          <div className='about-section' style={{ background: '#121212', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', paddingRight: '1em', paddingLeft: '1em' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '40%' }}>
+              <div className="title-headers">
+                About
+              </div>
+              <p style={{ color: 'gray', fontSize: '2em', lineHeight: '1.4em', letterSpacing: '0.05em' }}>While going to school for Civil Engineering, I was introduced to programming and found it fascinating. Today,
+              As a junior developer I hope to use my previous experience, managing multi-million dollar projects, with my craft,
+            web development, to make your project come to life!</p>
+            </div>
+            <div classname='experiment' style={{ display: 'flex', alignItems: 'flex-end', background: 'radial-gradient(closest-corner, #353535 , #121212 60%)' }}>
+              <img src={"/ryan-removebg.png"} style={{ height: '60vh', filter: 'grayscale(100%) brightness(60%)' }}></img>
+            </div>
           </div>
 
-          <div className="title-headers" onClick={() => setContact(!contact)} style={{ top: '60%' }}>
-            Contact
+          <div className='about-section' style={{ background: '#121212', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', paddingRight: '1em', paddingLeft: '1em', paddingTop: '10em' }}>
+            <div className="title-headers">
+              Projects
+            </div>
           </div>
 
+          <div className="project-container" style={{ paddingTop: 0 }} >
+            <div className="picture-container">
+              <img className="project-picture" src="/02.Projects/Picture1.png" alt="Local Footprint" />
+            </div>
+            <div className="details-container">
+              <h2 className="project-title">Local Footprint</h2>
+              <p className='project-info'>•	Monitor employees with real-time location tracking <br />
+            •	See past location data of all employees<br />
+            •	Workers can send reports from their phone to their manager<br />
+              </p>
+              <span className="project-tools">React | React-Native | Firebase | MapBox |  Deck.gl</span>
+              <div className="button-container">
+                <a href="https://www.google.com/"><div className="button github">GitHub</div></a>
+                <a href="https://www.facebook.com/"><div className="button github">Live</div></a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-container" >
+            <div className="picture-container">
+              <img className="project-picture" src="/02.Projects/Picture1.png" alt="Local Footprint" />
+            </div>
+            <div className="details-container">
+              <h2 className="project-title">Local Footprint</h2>
+              <p className='project-info'>•	Monitor employees with real-time location tracking <br />
+            •	See past location data of all employees<br />
+            •	Workers can send reports from their phone to their manager<br />
+              </p>
+              <span className="project-tools">React | React-Native | Firebase | MapBox |  Deck.gl</span>
+              <div className="button-container">
+                <a href="https://www.google.com/"><div className="button github">GitHub</div></a>
+                <a href="https://www.facebook.com/"><div className="button github">Live</div></a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-container" >
+            <div className="picture-container">
+              <img className="project-picture" src="/02.Projects/Picture1.png" alt="Local Footprint" />
+            </div>
+            <div className="details-container">
+              <h2 className="project-title">Local Footprint</h2>
+              <p className='project-info'>•	Monitor employees with real-time location tracking <br />
+            •	See past location data of all employees<br />
+            •	Workers can send reports from their phone to their manager<br />
+              </p>
+              <span className="project-tools">React | React-Native | Firebase | MapBox |  Deck.gl</span>
+              <div className="button-container">
+                <a href="https://www.google.com/"><div className="button github">GitHub</div></a>
+                <a href="https://www.facebook.com/"><div className="button github">Live</div></a>
+              </div>
+            </div>
+          </div>
+
+          <div className='about-section' style={{ background: '#121212', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', paddingRight: '1em', paddingLeft: '1em', paddingTop: '10em' }}>
+            <div className="title-headers">
+              Contact
+            </div>
+          </div>
+          <form
+            onSubmit={submitForm}
+            action="https://formspree.io/mqkyjakv"
+            method="POST"
+            className='contact-form'
+            style={{ color: 'white' }}
+          >
+            {/* <!-- add your custom form HTML here --> */}
+            <label>Name:</label>
+            <input type="name" name="name" />
+            <label>Email:</label>
+            <input type="email" name="email" />
+            <label>Message:</label>
+            <input type="text" name="message" />
+            {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
+            {status === "ERROR" && <p>Ooops! There was an error.</p>}
+          </form>
         </div>
-
         {/* <div style={{ height: '100vh', background: '#ff2928', border: 'green solid 100px', margin: '5%' }}>
           <div style={{ padding: '5%' }}>
             <h1 className='about-title'>About</h1>
@@ -198,9 +331,7 @@ function App() {
             </div>
           </div>
         </div> */}
-
       </section>
-
     </div >
   );
 }
