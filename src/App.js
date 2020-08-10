@@ -33,140 +33,259 @@ function App() {
 
   return (
     <>
-      <Parallax
-        // bgStyle={{ backgroundColor: 'black' }}
-        bgImage={'https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-076-premium-dark.png'}
-        bgImageAlt="the cat"
-        renderLayer={percentage => (
-          <>
-            {/* Top Right */}
-            {/* <div style={{
+      {width > 540 ?
+        <Parallax
+          bgImage={'/background.png'}
+          bgImageAlt="the cat"
+          renderLayer={percentage => (
+            <>
+              {/* `Hello my name is` image */}
+              <img src="/HelloMyNameIs.png" alt="" style={{
                 position: 'absolute',
-                right: `0%`,
-                top: '0%',
-                width: 0,
-                height: 0,
-                borderTop: `${2000 / (percentage * 80)}vh solid #c9050a`,
-                borderLeft: `${2000 / (percentage * 80)}vw solid transparent`,
-              }}> */}
-            {/* <div className='nav' style={{ right: '3em' }}>Contact</div>
-
-              <div className='nav' style={{ right: '8em' }}>Projects</div>
-
-              <div className='nav' style={{ right: '13em' }}>About</div> */}
-
-            <img src="/HelloMyNameIs.png" alt="" style={{
-              position: 'absolute',
-              right: `35%`,
-              top: '15%',
-              width: `${50 + (percentage - 0.49) * 1000}vw`,
-              transform: `translate(0,${(percentage) * 10000})px`,
-              opacity: `
+                right: `35%`,
+                top: '15%',
+                width: `${50 + (percentage - 0.49) * 1000}vw`,
+                transform: `translate(0,${(percentage) * 10000})px`,
+                opacity: `
                 ${percentage < 0.5
-                  ? 1
-                  : percentage < 0.505
-                    ? 0.9
-                    : percentage < 0.51
-                      ? 0.8
-                      : percentage < 0.515
-                        ? 0.7
-                        : percentage < 0.52
-                          ? 0.6
-                          : percentage < 0.525
-                            ? 0.5
-                            : percentage < 0.53
+                    ? 1
+                    : percentage < 0.505
+                      ? 0.9
+                      : percentage < 0.51
+                        ? 0.8
+                        : percentage < 0.515
+                          ? 0.7
+                          : percentage < 0.52
+                            ? 0.6
+                            : percentage < 0.525
+                              ? 0.5
+                              : percentage < 0.53
+                                ? 0.4
+                                : percentage < 0.535
+                                  ? 0.3
+                                  : percentage < 0.54
+                                    ? 0.2
+                                    : percentage < 0.545
+                                      ? 0.1
+                                      : percentage < 0.55
+                                        ? 0.05
+                                        : 0}`
+              }} />
+              {/* Expanding Circle */}
+              <div style={{
+                position: 'absolute',
+                right: `17%`,
+                top: '20.5%',
+                width: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
+                height: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
+                transform: `translateX(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px)`,
+                background: "#c9050a",
+                borderRadius: "100%"
+              }} ><img src="/RyanName.png" alt="" style={{
+                marginTop: "20%",
+                transform: `translateX(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 9000)}px)`,
+                opacity: `${percentage < 0.6
+                  ? 0.9
+                  : percentage < 0.603
+                    ? 0.8
+                    : percentage < 0.605
+                      ? 0.7
+                      : percentage < 0.607
+                        ? 0.6
+                        : percentage < 0.609
+                          ? 0.5
+                          : percentage < 0.611
+                            ? 0.4
+                            : percentage < 0.613
                               ? 0.4
-                              : percentage < 0.535
+                              : percentage < 0.615
                                 ? 0.3
-                                : percentage < 0.54
+                                : percentage < 0.617
                                   ? 0.2
-                                  : percentage < 0.545
+                                  : percentage < 0.619
                                     ? 0.1
-                                    : percentage < 0.55
+                                    : percentage < 0.621
                                       ? 0.05
                                       : 0}`
-            }} />
-            {/* Circle */}
-            <div style={{
-              position: 'absolute',
-              right: `17%`,
-              top: '20.5%',
-              width: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
-              height: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
-              transform: `translateX(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px)`,
-              background: "#c9050a",
+              }} /></div>
 
-
-              // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
-
-
-
-
-              borderRadius: "100%"
-            }} ><img src="/RyanName.png" alt="" style={{
-              marginTop: "20%",
-              transform: `translateX(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 9000)}px)`,
-              opacity: `${percentage < 0.6
-                ? 0.9
-                : percentage < 0.603
-                  ? 0.8
-                  : percentage < 0.605
-                    ? 0.7
-                    : percentage < 0.607
-                      ? 0.6
-                      : percentage < 0.609
-                        ? 0.5
-                        : percentage < 0.611
-                          ? 0.4
-                          : percentage < 0.613
-                            ? 0.4
-                            : percentage < 0.615
-                              ? 0.3
-                              : percentage < 0.617
-                                ? 0.2
-                                : percentage < 0.619
-                                  ? 0.1
-                                  : percentage < 0.621
-                                    ? 0.05
-                                    : 0}`
-            }} /></div>
-
-            <div style={{
-              position: 'absolute',
-              whiteSpace: 'nowrap',
-              right: `39%`,
-              top: '50%',
-              transform:
-                `translateY(${percentage < 0.54 ? "0" : percentage < 0.71 ? "78" : ((percentage - 0.54) * 300)}px) 
+              {/* Expanding Web Developer Word */}
+              <div style={{
+                position: 'absolute',
+                whiteSpace: 'nowrap',
+                right: `39%`,
+                top: '50%',
+                transform:
+                  `translateY(${percentage < 0.54 ? "0" : percentage < 0.71 ? "78" : ((percentage - 0.54) * 300)}px) 
                 translateX(${percentage < 0.7 ? percentage : percentage < 0.85 ? ((percentage - 0.7) * 79000) : 11850}px)
                 `,
-              fontSize: `${width < 431 ? 40 :
-                percentage < 0.7 ? 50 : percentage < 0.85 ? 56.5 + (percentage - 0.70) * 40000 : 6056}px`,
-              // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
-              borderRadius: "100%",
-              color: '#232323'
-            }} >Web Devel<span style={{
-              background: `rgb${`${percentage < 0.740
-                ? "(20,20,20)"
-                : percentage < 0.750
-                  ? "(18,18,18)"
-                  : percentage < 0.760
-                    ? "(18,18,18)"
-                    : "(18,18,18)"}`}`
+                fontSize: `${width < 431 ? 40 :
+                  percentage < 0.7 ? 50 : percentage < 0.85 ? 56.5 + (percentage - 0.70) * 40000 : 6056}px`,
+                borderRadius: "100%",
+                color: '#232323'
+              }} >Full Stack Devel
+
+              {/* Expanding 'O' in Developer */}
+                <span style={{
+                  background: `rgb${`${percentage < 0.700
+                    ? "(35,35,35)"
+                    : percentage < 0.710
+                      ? "(33,33,33)"
+                      : percentage < 0.720
+                        ? "(28,28,28)"
+                        : percentage < 0.730
+                          ? "(25,25,25)"
+                          : percentage < 0.74
+                            ? "(23,23,23)"
+                            : percentage < 0.750
+                              ? "(21,21,21)"
+                              : percentage < 0.76
+                                ? "(19,19,19)"
+                                : "(18,18,18)"}`}`
 
 
-              ,
-              borderRadius: '100%', height: '0.6em', width: '0.6em', display: 'inline-block',
-              fontSize: `${width < 431 ? 40 : percentage < 0.7 ? 50 : percentage < 0.85 ? 56.5 + (percentage - 0.70) * 60000 : 9056}px`,
-            }}></span>per
+                  ,
+                  borderRadius: '100%', height: '0.6em', width: '0.6em', display: 'inline-block',
+                  fontSize: `${width < 431 ? 40 : percentage < 0.7 ? 50 : percentage < 0.85 ? 56.5 + (percentage - 0.70) * 60000 : 9056}px`,
+                }}>
+
+                </span>
+            per
+            </div>
+            </>
+          )}
+        >
+          <div style={{ height: '210vh' }} />
+
+        </Parallax>
+        : <Parallax
+          bgImage={'/background.png'}
+          bgImageAlt="the cat"
+          renderLayer={percentage => (
+            <>
+              <h1 style={{
+                position: 'absolute',
+                color: 'white',
+                whiteSpace: 'nowrap',
+                lineHeight: '1.5em',
+                right: `30%`,
+                fontFamily: "'Lemonada', cursive",
+                fontSize: '2em',
+                top: '45%',
+                width: `${50 + (percentage - 0.49) * 1000}vw`,
+                transform: `translate(0,${(percentage) * 10000})px`,
+                opacity: `
+              ${percentage < 0.5
+                    ? 1
+                    : percentage < 0.505
+                      ? 0.9
+                      : percentage < 0.51
+                        ? 0.8
+                        : percentage < 0.515
+                          ? 0.7
+                          : percentage < 0.52
+                            ? 0.6
+                            : percentage < 0.525
+                              ? 0.5
+                              : percentage < 0.53
+                                ? 0.4
+                                : percentage < 0.535
+                                  ? 0.3
+                                  : percentage < 0.54
+                                    ? 0.2
+                                    : percentage < 0.545
+                                      ? 0.1
+                                      : percentage < 0.55
+                                        ? 0.05
+                                        : 0}`
+              }} >Full Stack Developer<br />Vancouver</h1>
+
+              {/* Expanding Circle */}
+              <div style={{
+                position: 'absolute',
+                right: `20%`,
+                top: '10%',
+                width: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
+                height: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
+                transform: `translateX(${percentage < 0.53 ? "0" : ((percentage - 0.53) * 4500)}px)`,
+                background: `rgb${`${percentage < 0.560
+                  ? "(201, 5, 10)"
+                  : percentage < 0.565
+                    ? "(190, 5, 10)"
+                    : percentage < 0.570
+                      ? "(180, 5, 10)"
+                      : percentage < 0.575
+                        ? "(170, 5, 10)"
+                        : percentage < 0.580
+                          ? "(160, 5, 10)"
+                          : percentage < 0.585
+                            ? "(150, 5, 10)"
+                            : percentage < 0.580
+                              ? "(140, 5, 10)"
+                              : percentage < 0.585
+                                ? "(130, 5, 10)"
+                                : percentage < 0.590
+                                  ? "(120, 5, 10)"
+                                  : percentage < 0.595
+                                    ? "(110, 5, 10)"
+                                    : percentage < 0.6
+                                      ? "(100, 5, 10)"
+                                      : percentage < 0.605
+                                        ? "(90, 5, 10)"
+                                        : percentage < 0.61
+                                          ? "(80, 5, 10)"
+                                          : percentage < 0.615
+                                            ? "(70, 5, 10)"
+                                            : percentage < 0.62
+                                              ? "(60, 10, 10)"
+                                              : percentage < 0.625
+                                                ? "(50, 15, 15)"
+                                                : percentage < 0.63
+                                                  ? "(50, 15, 15)"
+                                                  : percentage < 0.635
+                                                    ? "(40, 18, 18)"
+                                                    : percentage < 0.64
+                                                      ? "(30, 18, 18)"
+                                                      : percentage < 0.645
+                                                        ? "(20, 18, 18)"
+                                                        : "(18,18,18)"}`}`,
+                borderRadius: "100%"
+              }} >
+                <img src="/RyanName.png" alt="" style={{
+                  marginTop: "20%",
+                  transform: `translateX(${percentage < 0.53 ? "0" : ((percentage - 0.53) * 6000)}px)`,
+                  opacity: `${percentage < 0.6
+                    ? 0.9
+                    : percentage < 0.610
+                      ? 0.8
+                      : percentage < 0.612
+                        ? 0.7
+                        : percentage < 0.614
+                          ? 0.6
+                          : percentage < 0.616
+                            ? 0.5
+                            : percentage < 0.618
+                              ? 0.4
+                              : percentage < 0.620
+                                ? 0.4
+                                : percentage < 0.622
+                                  ? 0.3
+                                  : percentage < 0.624
+                                    ? 0.2
+                                    : percentage < 0.626
+                                      ? 0.1
+                                      : percentage < 0.628
+                                        ? 0.05
+                                        : 0}`
+                }} />
               </div>
-          </>
-        )}
-      >
-        <div style={{ height: '210vh' }} />
+            </>
+          )}
+        >
+          <div style={{ height: '150vh' }} />
 
-      </Parallax>
-
+        </Parallax>
+      }
 
       <div style={{ width: '100%', background: '#121212' }} >
 
@@ -262,11 +381,11 @@ function App() {
           className='contact-form'
         >
           {/* <label>Name:</label> */}
-          <input className='input-general input-small' type="name" name="name" placeholder="what's your name?"
+          <input className='input-general input-small' type="name" name="name" placeholder="name?"
             style={{ color: 'white', paddingTop: 0 }} />
 
           {/* <label>Email:</label> */}
-          <input className='input-general input-small' type="email" name="email" placeholder="what's your email?" />
+          <input className='input-general input-small' type="email" name="email" placeholder="email?" />
 
           {/* <label>Message:</label> */}
           <textarea rows={10} cols={20}

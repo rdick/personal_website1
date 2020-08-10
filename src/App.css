@@ -311,10 +311,22 @@ a {
 
 @media (max-width: 540px){
   html {
-    font-size: 10px;
+    font-size: 11px;
   }
   .title-headers {
     font-size: 100px;
+  }
+  .project-picture {
+    max-width: 100%;
+  }
+  .input-large {
+    margin-bottom: 2em;
+  }
+  .input-submit {
+    margin-bottom: 2em;
+  }
+  .footer {
+    font-size: 10px;
   }
 }
 
