@@ -309,7 +309,7 @@ function App() {
         </div>
 
         <div className='about-section'>
-          <div className="title-headers">
+          <div className="title-headers" style={{ marginBottom: '0.3em' }}>
             Projects
             </div>
         </div>
@@ -424,10 +424,6 @@ function App() {
           © 2012 - {currentyear}
             &nbsp; Ryan Dick. All rights reserved.
           </div>
-
-
-
-
       </div>
     </>
   );

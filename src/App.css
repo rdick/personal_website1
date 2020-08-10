@@ -305,6 +305,16 @@ a {
     margin-top: 2em;
     margin-bottom: 0em;
   }
+  .input-small {
+    width: 60%;
+    padding-right: 1em;
+    padding-left: 1em;
+  }
+  .input-large {
+    width: 70%;
+    padding-right: 1em;
+    padding-left: 1em;
+  }
 }
 
 
@@ -322,11 +332,18 @@ a {
   .input-large {
     margin-bottom: 2em;
   }
-  .input-submit {
-    margin-bottom: 2em;
-  }
   .footer {
     font-size: 10px;
+  }
+  .input-small {
+    width: 70%;
+    padding-right: 1em;
+    padding-left: 1em;
+  }
+  .input-large {
+    width: 80%;
+    padding-right: 1em;
+    padding-left: 1em;
   }
 }
 
