@@ -10,6 +10,8 @@ function App() {
   const [contact, setContact] = useState(false)
   const [status, setStatus] = useState("")
 
+  let currentyear = new Date().getFullYear()
+
 
   const submitForm = ev => {
     ev.preventDefault();
@@ -48,7 +50,7 @@ function App() {
                 top: '0%',
                 width: 0,
                 height: 0,
-                borderTop: `${2000 / (percentage * 80)}vh solid #ff2928`,
+                borderTop: `${2000 / (percentage * 80)}vh solid #7A431D`,
                 borderLeft: `${2000 / (percentage * 80)}vw solid transparent`,
               }} />
               <img src="/HelloMyNameIs.png" alt="" style={{
@@ -90,7 +92,7 @@ function App() {
                 width: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
                 height: `${percentage < 0.53 ? "250" : ((percentage - 0.53) * 10000) + 250}px`,
                 transform: `translateX(${percentage < 0.54 ? "0" : ((percentage - 0.54) * 2000)}px)`,
-                background: "#ff2928",
+                background: "#7A431D",
 
 
                 // background: `rgb(255,${((percentage - 0.49) * 700)},${((percentage - 0.49) * 1200)})`,
@@ -187,12 +189,11 @@ function App() {
               <div className="title-headers">
                 About
               </div>
-              <p style={{ color: 'gray', fontSize: '2em', lineHeight: '1.4em', letterSpacing: '0.05em' }}>While going to school for Civil Engineering, I was introduced to programming and found it fascinating. Today,
-              As a junior developer I hope to use my previous experience, managing multi-million dollar projects, with my craft,
-            web development, to make your project come to life!</p>
+              <p classname='about-info' style={{ color: 'gray', fontSize: '2em', lineHeight: '1.4em', letterSpacing: '0.05em' }}>While studying Civil Engineering, I was introduced to programming and found it fascinating. Today,
+              As a junior developer web developer I can use my prior experience, managing multi-million dollar projects, to make your project come to life!</p>
             </div>
             <div classname='experiment' style={{ display: 'flex', alignItems: 'flex-end', background: 'radial-gradient(closest-corner, #353535 , #121212 60%)' }}>
-              <img src={"/ryan-removebg.png"} style={{ height: '60vh', filter: 'grayscale(100%) brightness(60%)' }}></img>
+              <img src={"/ryan-removebg.png"} style={{ height: '60vh', filter: 'grayscale(100%) brightness(80%)' }}></img>
             </div>
           </div>
 
@@ -261,35 +262,34 @@ function App() {
               Contact
             </div>
           </div>
-          <div className='form-container'>
-            <form
-              onSubmit={submitForm}
-              action="https://formspree.io/mqkyjakv"
-              method="POST"
-              className='contact-form'
-              style={{ color: 'white' }}
-            >
-              {/* <!-- add your custom form HTML here --> */}
-              <div className='form-name'>
-                {/* <label>Name:</label> */}
-                <input className='input-general input-small' type="name" name="name" placeholder="what's your name?" />
-              </div>
 
-              <div className='form-name'>
-                {/* <label>Email:</label> */}
-                <input className='input-general input-small' type="email" name="email" placeholder='your@email.com' />
-              </div>
+          <form
+            onSubmit={submitForm}
+            action="https://formspree.io/mqkyjakv"
+            method="POST"
+            className='contact-form'
+            style={{ color: 'white' }}
+          >
+            {/* <label>Name:</label> */}
+            <input className='input-general input-small' type="name" name="name" placeholder="what's your name?" />
 
-              <div className='form-name'>
-                {/* <label>Message:</label> */}
-                <input className='input-general input-large' type="text" name="message" placeholder='My favorite type of pizza is Hawaiian. What is yours?' />
-              </div>
+            {/* <label>Email:</label> */}
+            <input className='input-general input-small' type="email" name="email" placeholder="what's your email?" />
 
-              {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
-              {status === "ERROR" && <p>Ooops! There was an error.</p>}
-            </form>
-          </div>
+            {/* <label>Message:</label> */}
+            <textarea rows={10} cols={20}
+              className='input-general input-large' type="text" name="message" placeholder="My favorite type of pizza is Hawaiian. What's yours?" />
+
+            {status === "SUCCESS" ? <p>Thanks!</p> : <button className='input-submit'>
+              Submit
+                </button>}
+            {status === "ERROR" && <p>Ooops! There was an error.</p>}
+          </form>
         </div>
+        <div className='footer' style={{ background: '#121212', textAlign: 'center', padding: '1em', display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: 'grey' }}>
+          © 2012 - {currentyear} Ryan Dick. All rights reserved.
+        </div>
+
         {/* <div style={{ height: '100vh', background: '#ff2928', border: 'green solid 100px', margin: '5%' }}>
           <div style={{ padding: '5%' }}>
             <h1 className='about-title'>About</h1>
