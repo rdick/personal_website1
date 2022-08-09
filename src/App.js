@@ -282,7 +282,7 @@ function App() {
             </>
           )}
         >
-          <div style={{ height: '150vh' }} />
+          <div style={{ height: '140vh' }} />
 
         </Parallax>
       }
@@ -295,8 +295,7 @@ function App() {
           </div>
           <div className='about-container'>
             <p className='about-info'>
-              While studying Civil Engineering, I was introduced to programming and found it fascinating. Today,
-              As a junior developer web developer I can use my prior experience, managing multi-million dollar projects, to make your project come to life!
+            I am a full stack software developer with 3 years of experience using JavaScript, React, React Native, Express, Ruby on Rails, HTML, CSS and SQL Relational Databases. 
               </p>
             <div style={{
               display: `flex`, alignItems: `flex-end`, background: `radial-gradient(closest-corner, #353535 , #121212 60%)`
@@ -314,56 +313,84 @@ function App() {
             </div>
         </div>
 
+        <div className="project-container" >
+          <div className="picture-container">
+            <img className="project-picture" src="/02.Projects/01.localfootprint.png" alt="Local Footprint" />
+          </div>
+          <div className="details-container">
+            <h2 className="project-title">Local Footprint</h2>
+            <p className='project-info'>A real-time location tracking application that allows managers
+            to see where their employees are situated. Workers can also send reports
+            from their phone to their manager. This project has a mobile application and a desktop dashboard.
+            </p>
+            <span className="project-tools">React | React-Native | Firebase | MapBox |  Deck.gl</span>
+            <div className="button-container">
+              <a href="https://github.com/akshayn138888/local-footprint"><div className="button github">GitHub</div></a>
+              <a href="https://localfootprint.netlify.app"><div className="button github">Live</div></a>
+            </div>
+          </div>
+        </div>
+
+        <div className="project-container" >
+          <div className="picture-container">
+            <img className="project-picture x-padding" src="/02.Projects/02.ecom-phone.png" alt="Local Footprint" />
+          </div>
+          <div className="details-container">
+            <h2 className="project-title">Phone Shopping App</h2>
+            <p className='project-info'>An ecommerce mobile application that allows users to buy and sell items with other users.
+            </p>
+            <span className="project-tools">React-Native | Firebase | Redux | Redux Thunk</span>
+            <div className="button-container">
+              <a href="https://github.com/rdick/Phone---Shoppy"><div className="button github">GitHub</div></a>
+              {/* <a href="https://www.facebook.com/"><div className="button github">Live</div></a> */}
+            </div>
+          </div>
+        </div>
+
         <div className="project-container" style={{ paddingTop: 0 }} >
           <div className="picture-container">
-            <img className="project-picture" src="/02.Projects/Picture1.png" alt="Local Footprint" />
+            <img className="project-picture" src="/02.Projects/05.iambmg.png" alt="Local Footprint" />
           </div>
           <div className="details-container">
-            <h2 className="project-title">Local Footprint</h2>
-            <p className='project-info'>•	Monitor employees with real-time location tracking <br />
-            •	See past location data of all employees<br />
-            •	Workers can send reports from their phone to their manager<br />
+            <h2 className="project-title">Artist Portfolio Website</h2>
+            <p className='project-info'>An artist portfolio website made for a personal friend of mine
             </p>
-            <span className="project-tools">React | React-Native | Firebase | MapBox |  Deck.gl</span>
+            <span className="project-tools">React | Framer Motion | React Hooks</span>
             <div className="button-container">
-              <a href="https://www.google.com/"><div className="button github">GitHub</div></a>
-              <a href="https://www.facebook.com/"><div className="button github">Live</div></a>
+              <a href="https://github.com/rdick/Bens_Art_Showcase"><div className="button github">GitHub</div></a>
+              <a href="https://iambmg.netlify.app/"><div className="button github">Live</div></a>
             </div>
           </div>
         </div>
 
-        <div className="project-container" >
+        <div className="project-container" style={{ paddingTop: 0 }} >
           <div className="picture-container">
-            <img className="project-picture" src="/02.Projects/Picture1.png" alt="Local Footprint" />
+            <img className="project-picture" src="/02.Projects/03.chatapp.png" alt="Local Footprint" />
           </div>
           <div className="details-container">
-            <h2 className="project-title">Local Footprint</h2>
-            <p className='project-info'>•	Monitor employees with real-time location tracking <br />
-            •	See past location data of all employees<br />
-            •	Workers can send reports from their phone to their manager<br />
+            <h2 className="project-title">Real-Time Chat App</h2>
+            <p className='project-info'>A desktop application that enables real-time chat between multiple devices
             </p>
-            <span className="project-tools">React | React-Native | Firebase | MapBox |  Deck.gl</span>
+            <span className="project-tools">React | Express | Socket.io</span>
             <div className="button-container">
-              <a href="https://www.google.com/"><div className="button github">GitHub</div></a>
-              <a href="https://www.facebook.com/"><div className="button github">Live</div></a>
+              <a href="https://github.com/rdick/React_chat_app"><div className="button github">GitHub</div></a>
+              <a href="https://instant-message.netlify.app/"><div className="button github">Live</div></a>
             </div>
           </div>
         </div>
 
-        <div className="project-container" >
+        <div className="project-container" style={{ paddingTop: 0 }} >
           <div className="picture-container">
-            <img className="project-picture" src="/02.Projects/Picture1.png" alt="Local Footprint" />
+            <img className="project-picture" src="/02.Projects/04.auctionapp.png" alt="Local Footprint" />
           </div>
           <div className="details-container">
-            <h2 className="project-title">Local Footprint</h2>
-            <p className='project-info'>•	Monitor employees with real-time location tracking <br />
-            •	See past location data of all employees<br />
-            •	Workers can send reports from their phone to their manager<br />
+            <h2 className="project-title">Luxor Auctions - Bidding App</h2>
+            <p className='project-info'>A desktop application where users can auction off items and can bid on other user’s items
             </p>
-            <span className="project-tools">React | React-Native | Firebase | MapBox |  Deck.gl</span>
+            <span className="project-tools">Ruby on Rails | CRUD | REST API | React</span>
             <div className="button-container">
-              <a href="https://www.google.com/"><div className="button github">GitHub</div></a>
-              <a href="https://www.facebook.com/"><div className="button github">Live</div></a>
+              <a href="https://github.com/rdick/Luxor-Auctions---Bidding-App"><div className="button github">GitHub</div></a>
+              <a href="https://auction-react3.herokuapp.com/"><div className="button github">Live</div></a>
             </div>
           </div>
         </div>

@@ -100,7 +100,7 @@ a {
 /* Project Section */
 
 .project-container {
-  padding-top: 5em;
+  margin-top: 5em;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -114,12 +114,18 @@ a {
 }
 
 .project-picture {
-  width: 90%;
+  width: 80vh;
+  height: auto;
   border-radius: 5px 5px 5px 5px;
 }
 
+.photo-padding {
+  padding-left: 4em;
+}
+
 .details-container {
-  /* margin: 0 5%; */
+  width: 35%;
+  padding-left: 2em;
 }
 .project-title {
   margin-top: 5%;
@@ -127,7 +133,7 @@ a {
 }
 
 .project-details {
-  width: 45%;
+  
 }
 
 .projects-title {
@@ -293,12 +299,14 @@ a {
     text-align: center;
   }
   .project-picture {
-    max-width: 90%;
+    max-width: 95%;
     max-height: 70vh;
     width: auto;
   }
   .details-container {
     text-align: center;
+    width: 90%;
+    padding: none;
   }
   .button-container {
     justify-content: center;
@@ -326,8 +334,14 @@ a {
   .title-headers {
     font-size: 100px;
   }
+  .project-container{
+    margin-top: 7em;
+  }
   .project-picture {
-    max-width: 100%;
+    max-width: 95%;
+  }
+  .details-container {
+    width: 90%;
   }
   .input-large {
     margin-bottom: 2em;
