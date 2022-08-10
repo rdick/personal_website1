@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Parallax } from "react-parallax";
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
@@ -8,6 +8,26 @@ import useWindowDimensions from './hooks/window'
 function App() {
   const { width } = useWindowDimensions();
   const [status, setStatus] = useState("")
+
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+      let timer1 = setTimeout(() => setShow(true), 4 * 1000);
+
+      // this will clear Timeout
+      // when component unmount like in willComponentUnmount
+      // and show will not change to true
+      return () => {
+        clearTimeout(timer1);
+      };
+    },
+    // useEffect will run only one time with empty []
+    // if you pass a value to array,
+    // like this - [data]
+    // than clearTimeout will run every time
+    // this value changes (useEffect re-run)
+    []
+  );
 
   let currentyear = new Date().getFullYear()
 
@@ -33,6 +53,10 @@ function App() {
 
   return (
     <>
+      <div className="outerbox">
+          <image className="box"/>
+      </div>
+      {show && <>
       {width > 540 ?
         <Parallax
           bgImage={'/background.png'}
@@ -287,7 +311,7 @@ function App() {
         </Parallax>
       }
 
-      <div style={{ width: '100%', background: '#121212' }} >
+      <div style={{paddingInline: "2em", background: '#121212' }} >
 
         <div className='about-section'>
           <div className="title-headers">
@@ -452,7 +476,8 @@ function App() {
             &nbsp; Ryan Dick. All rights reserved.
           </div>
       </div>
-    </>
+      </>}
+      </>
   );
 }
 
